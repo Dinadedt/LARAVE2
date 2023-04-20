@@ -15,6 +15,7 @@ class Alumno extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'idAlumno',
         'codigo',
         'nombre',

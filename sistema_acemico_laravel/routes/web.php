@@ -14,8 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResources([
-    'alumnos'=>AlumnoController::class,
+    /*Route::apiResources([
+    'alumnos'=>AlumnoController::class, 
+]);*/
 ]);
+Route::controller(AlumnoController::class)->group(function(){
+    Route::get('/alumnos', 'index');
+    Route::post('/alumnos', 'store');
+    Route::put('/alumnos', 'update');
+    Route::delete('/alumnos', 'destroy');
+});
 
 Route::get('/', function () {
     return view('welcome');
