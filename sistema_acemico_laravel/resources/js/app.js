@@ -1,11 +1,13 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import alumnos from './components/AlumnoComponent.vue';
+import docentes from './components/DocenteComponent.vue';
 window.db = '';
 
 const app = createApp({
     components:{
         alumnos,
+        docentes,
     },
     data(){
         return {

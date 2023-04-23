@@ -1,7 +1,8 @@
 <?php
 use App\Http\Controllers\AlumnoController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DocenteController;
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,15 @@ Route::controller(AlumnoController::class)->group(function(){
     Route::put('/alumnos', 'update');
     Route::delete('/alumnos', 'destroy');
 });
+
+
+Route::controller(DocenteController::class)->group(function(){
+    Route::get('/docentes', 'index');
+    Route::post('/docentes', 'store');
+    Route::put('/docentes', 'update');
+    Route::delete('/docentes', 'destroy');
+});
+
 
 Route::get('/', function () {
     return view('welcome');
